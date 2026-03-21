@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# 🎨 React Styling Methods Example
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates different ways to apply styles in React applications.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+* Apply styles using external CSS
+* Use inline styling in React
+* Use CSS Modules for scoped styling
+* Clean and simple UI example
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📂 Project Structure
 
-### `npm test`
+```
+src/
+│── App.js
+│── App.css
+│── Style.css
+│── custom.module.css
+│── logo.svg
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🧠 Concepts Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. External CSS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Using a normal CSS file (`Style.css`) and applying classes globally.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```css
+.primary {
+  color: blue;
+}
+```
 
-### `npm run eject`
+```jsx
+<h3 className="primary">Style1 in React</h3>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Inline Styling
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Applying styles directly inside JSX using JavaScript objects.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```jsx
+<h3 style={{ color: 'red', fontSize: 15 }}>
+  Style2 in React
+</h3>
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. CSS Modules
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Using scoped CSS to avoid conflicts.
 
-### Code Splitting
+```css
+/* custom.module.css */
+.success {
+  color: green;
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```jsx
+import style from './custom.module.css';
 
-### Analyzing the Bundle Size
+<h3 className={style.success}>Style3 in React</h3>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 💻 Code Example
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### App.js
 
-### Advanced Configuration
+```jsx
+import logo from './logo.svg';
+import './App.css';
+import './Style.css';
+import style from './custom.module.css';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+function App() {
+  return (
+    <div className="App">
+      <h2>Applying Style in CSS</h2>
+      <h3 className='primary'>Style1 in React</h3>
+      <h3 style={{ color: 'red', fontSize: 15 }}>Style2 in React</h3>
+      <h3 className={style.success}>Style3 in React</h3>
+    </div>
+  );
+}
 
-### Deployment
+export default App;
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## ⚙️ Installation & Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 1. Install dependencies
+
+```
+npm install
+```
+
+---
+
+## ▶️ Run the Project
+
+```
+npm start
+```
+
+Open in browser:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🎯 Learning Outcome
+
+* Understand different styling methods in React
+* Learn when to use CSS Modules vs normal CSS
+* Practice inline styling in JSX
+
+---
+
+## 👨‍💻 Author
+
+**Rutwik Patil**
